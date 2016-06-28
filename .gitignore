@@ -1,0 +1,9 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+*/.temp/
+.idea/
+reports/
+angular-midway/
+karma-cuke/
