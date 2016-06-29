@@ -186,3 +186,10 @@
         });
     });
 })(__adapter__);
+var myStepDefinitionsWrapper = function () {
+    
+    this.Given(/^Go to MyToDo Page$/, function (callback) {
+        callback.pending();
+    });
+};
+module.exports = myStepDefinitionsWrapper;

@@ -9,7 +9,7 @@ Scenario: Add one Task
 
 @frontend
 Scenario: Remove one task
-	Given I add one task
+	Given Go to MyToDo Page
 	And At least one record exists in MyToDo Page
 	When I press [X] button of one record
 	Then The task record is removed.

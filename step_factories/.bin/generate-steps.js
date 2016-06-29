@@ -1,6 +1,8 @@
 #! /usr/bin/env node
 
-(function () {
+// I don't want the actual return value to be the result of the call, so use exclamatory mark here, also save a byte
+// http://stackoverflow.com/questions/3755606/what-does-the-exclamation-mark-do-before-the-function
+!function () {
     var fs = require('fs'),
         path = require('path'),
         shell = require('shelljs'),
@@ -32,7 +34,16 @@
     }
 
     fs.readdirSync(stepFactories).forEach(function (file) {
-        if (path.extname(file) === '.feature') {
+
+        var stats;
+        try{
+            stats = fs.lstatSync(stepFactories + file);
+        } catch (err) {
+            console.log(err);
+        }
+
+        // make sure it's a file and it's with a suffix '.feature'
+        if (stats.isFile() && (path.extname(file) === '.feature')) {
             
             var featureName = file.replace(/\.feature$/, '');
             feature = stepFactories + featureName + '.feature';
@@ -45,7 +56,7 @@
             // Buffer steps
             var BUFFER = bufferFile(tempSteps);
 
-            shell.sed('-i', "'%CONTENT%'", BUFFER, tempWrapper);
+            shell.sed('-i', "'%CONTENT%';", BUFFER, tempWrapper);
 
             shell.mv('-f', tempWrapper, stepFactories + temp + featureName + '.steps.js');
     
@@ -53,7 +64,7 @@
         }
     });
     
-})();
+}();
 
 
 
