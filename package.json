@@ -17,7 +17,7 @@
     "angular": "~1.4.12",
     "angular-cookies": "^1.5.7",
     "angular-local-storage": "^0.2.7",
-    "angular-midway": "0.0.6",
+    "angular-midway": "0.0.8",
     "angular-mocks": "~1.4.12",
     "angular-resource": "^1.5.7",
     "angular-route": "^1.5.7",
