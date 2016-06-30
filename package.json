@@ -8,7 +8,7 @@
   "scripts": {
     "ut:cucumber": "node node_modules/karma/bin/karma start tests/karma.bdd.conf.js",
     "ut:cucumber-debug": "node-debug node_modules/karma/bin/karma start tests/karma.bdd.conf.js",
-    "ut:cucumber-steps": "node ./step_factories/.bin/generate-steps.js"
+    "ut:cucumber:create-steps": "node ./step_factories/.bin/generate-steps.js"
   },
   "dependencies": {
     "shelljs": "~0.7.0"

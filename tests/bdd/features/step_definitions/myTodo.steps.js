@@ -3,9 +3,6 @@
     
         window.Cucumber.callback(scenario);
 
-        scenario.World = function () {};
-        var proto = scenario.World.prototype;
-
         var $rootScope,
             $scope,
             $controller,
@@ -75,7 +72,7 @@
             ngModel.$setViewValue(text);
         }
 
-        proto.Before = function () {
+        scenario.Before({tags: ['@todo']}, function () {
 
             module('mytodoApp');
             module('cacheTemplates');
@@ -101,22 +98,20 @@
                 localStorageService = _localStorageService_;
             });
 
-        };
+        });
 
-        proto.After = function () {
-            
+        scenario.After({tags: ['@todo']}, function () {
+
             localStorageService.clearAll();
 
             input = null;
             taskList = null;
             originalTasks = null;
             tasksAfter = null;
-        };
+        });
 
         scenario.Given(/^Go to MyToDo Page$/, function (callback) {
 
-            this.Before();
-            
             goto('/');
 
             $controller($route.current.controller, {$scope: $scope});
@@ -144,7 +139,6 @@
         scenario.Then(/^one task record is generated\.$/, function (callback) {
             expect(tasksAfter.length - originalTasks.length).to.equal(1);
 
-            this.After();
             callback();
         });
 
@@ -186,10 +180,3 @@
         });
     });
 })(__adapter__);
-var myStepDefinitionsWrapper = function () {
-    
-    this.Given(/^Go to MyToDo Page$/, function (callback) {
-        callback.pending();
-    });
-};
-module.exports = myStepDefinitionsWrapper;

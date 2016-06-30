@@ -54,7 +54,7 @@ module.exports = function(config) {
     ],
 
     client: {
-        args: ['--tags', '@frontend']
+        args: ['--tags', '@todo']
     },
 
     // test results reporter to use
