@@ -2,6 +2,8 @@
     adapter.addStepDefinitions(function (scenario) {
     
         window.Cucumber.callback(scenario);
+        
+        debugger
 
         var $rootScope,
             $scope,
@@ -73,6 +75,8 @@
         }
 
         scenario.Before({tags: ['@todo']}, function () {
+            
+            debugger
 
             module('mytodoApp');
             module('cacheTemplates');
