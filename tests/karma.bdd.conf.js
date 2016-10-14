@@ -22,7 +22,7 @@ module.exports = function(config) {
 
   // npm
   libs = [].concat(
-      unwatchedPattern(browserFile(__dirname + '/adapter.js')),
+      // unwatchedPattern(browserFile(__dirname + '/adapter.js')), // from karma-chai-sinon
       unwatchedPattern(browserFile('chai-as-promised')),
       unwatchedPattern(browserFile('sinon-chai', '/sinon-chai.js')),
       unwatchedPattern(browserFile('chai', '/chai.js')),
