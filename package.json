@@ -9,6 +9,7 @@
     "start": "npm run lite",
     "ut:bdd": "node node_modules/karma/bin/karma start tests/karma.bdd.conf.js # ut+cucumber",
     "cucumber:create-steps": "node ./step_factories/.bin/generate-steps.js",
+    "cucumber:debug:create-steps": "node node_modules/cucumber/bin/cucumber.js --snippet-syntax step_factories/.supports/javascript_syntax.js step_factories/features/myTodo.feature",
     "lite": "lite-server -c bs-config.js"
   },
   "dependencies": {
@@ -47,6 +48,7 @@
     "karma-read-json": "~1.1.0",
     "karma-spec-reporter": "0.0.26",
     "lite-server": "^2.2.2",
+    "node-inspector": "^0.12.8",
     "sinon": "1.17.6",
     "sinon-chai": "~2.8.0"
   }
