@@ -3,8 +3,6 @@
     
         window.Cucumber.callback(scenario);
         
-        debugger
-
         var $rootScope,
             $scope,
             $controller,
@@ -76,8 +74,6 @@
 
         scenario.Before({tags: ['@todo']}, function () {
             
-            debugger
-
             module('mytodoApp');
             module('cacheTemplates');
 

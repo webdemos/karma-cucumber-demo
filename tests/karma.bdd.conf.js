@@ -42,6 +42,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [].concat(
+        // libs
           'node_modules/bootstrap/dist/css/bootstrap.css',
           'node_modules/es5-shim/es5-shim.js',
           'node_modules/json3/lib/json3.js',
