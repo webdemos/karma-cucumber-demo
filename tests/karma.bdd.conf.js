@@ -87,11 +87,16 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['mocha', 'bdd-json', 'html', 'hy-html',  'coverage'],
+    reporters: ['mocha', 'bdd-json', 'html', 'hy-html', 'allure', 'coverage'],
 
     preprocessors: {
       'app/html/**/*.html': ['ng-html2js'],
       'app/**/*.js': ['coverage']
+    },
+  
+    // the default configuration
+    allureReport: {
+      reportDir: report + bdd + '/allure/'
     },
 
     ngHtml2JsPreprocessor: {
