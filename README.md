@@ -21,9 +21,9 @@ Before starting it's better for you to take a look at [angular-midway](https://w
 ## Report
 
 1. Code coverage report.
-1. BDD feature report.
-1. Jasmine style report.
-1. A beautiful angular style report.
+1. [BDD feature report](https://www.npmjs.com/package/cucumber-html-reporter).
+1. [Jasmine style report](https://github.com/dtabuenc/karma-html-reporter).
+1. [A beautiful angular style report](https://github.com/jcdalton2201/karma-hy-html-reporter).
 
 
 ## TODO:
